@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Nova+Square&display=swap');
+
+:root{
+    background: url(home_image.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    font-family: 'Nova Square', cursive;
+}
+
+h1{
+    font-size: 5.4rem;
+    color:beige;
+    margin-bottom: 5rem;
+    text-align: center;
+}
+
+h2{
+    font-size: 4.2rem;
+    margin-bottom: 4rem;
+}
+
+.container{
+    width:100vw;
+    height: 100vh;
+    display: flex;
+    justify-content:center;
+    align-items:center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.flex-column{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+
+.btn{
+    font-size: 2.4rem;
+    padding: 2rem 0;
+    width: 30rem;
+    text-align: center;
+    margin-bottom: 1rem;
+    text-decoration: none;
+    color: black;
+    background-color:darkorchid;
+    border-radius: 12px;
+
+}
+
+
+.btn:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 darkorchid;
+    transition: transform 150ms;
+    transform: scale(1.03);
+
+}
+
+
+.btn[disabled]:hover{
+    cursor: not-allowed;
+    box-shadow:none;
+    transform:none;
+}
+
+
+.fa-crown{
+    font-size: 2.5rem;
+    margin-left: 1rem;
+}
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,153 @@
+:root{
+    background: url(game_image.jpg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+}
+
+p{
+    font-size: large;
+}
+
+.container{
+    display: block;
+    max-width: 20rem;
+    border-radius: 12px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 5rem;
+    padding: 2rem;
+    background-color:rgba(0, 0, 0, 0.5);
+    color: beige;
+    font-size: 0.7rem;
+}
+
+#question{
+    font-size: large;
+    margin: 0rem;
+    text-align: center;
+}
+
+.choice-container{
+    display: flex;
+    margin-bottom: 0.8rem;
+    width:100%;
+    align-items: center;
+    border-radius: 12px;
+    background-color: rgba(255, 9, 210, 0.6);
+    
+}
+
+.choice-container:hover{
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 darkorchid;
+    transform: scale(1.02);
+    transform: transform 100ms;
+
+}
+
+.choice-text{
+    text-align: center;
+    width:100%;
+    margin-top: 0%;
+    margin-bottom: 0%;
+    padding: 1rem;
+}
+
+.correct{
+    background-color:forestgreen;
+}
+
+.incorrect{
+    background-color: darkred;
+}
+
+
+/* on style le hud*/
+
+#hud{
+    display: flex;
+    justify-content: space-between;
+}
+
+.hud-prefix{
+    text-align: center;
+    margin: 0rem;
+    font-size: 1rem;
+}
+
+.hud-main-text{
+    text-align: center;
+    margin: 0rem;
+}
+
+.hidden{
+    display: none;
+}
+
+.quote-area{
+    display: flex;
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+
+}
+
+.quote-area i{
+    font-size: 1rem;
+    margin-right:0.5rem;
+    margin-left: 0.5rem;
+}
+
+
+.quote-area i:last-child{
+    display: flex;
+    align-items: flex-end;
+}
+
+
+
+
+
+
+
+
+#loader{
+    width: 100px;
+    height: 100px;
+    margin: 5rem auto;
+    margin-top: 17rem;
+    /*border: 2px solid black;*/
+    border-radius: 50%;
+    background-color: darkred;
+    background-image: url("https://res.cloudinary.com/sam-el/image/upload/v1616803119/b5iagr2hi29qu2jkmh09a4rkln-f8d58d3af196dd19d522f16e8789bea5_lbpiwr.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: round 2300ms linear 0ms infinite normal;
+    /*box-shadow: 5px 5px 150px 0px black;
+*/
+}
+
+@keyframes round{
+    0%{
+        transform: rotate(0deg) scale(1);
+        background-image: url("https://res.cloudinary.com/sam-el/image/upload/v1616803119/b5iagr2hi29qu2jkmh09a4rkln-f8d58d3af196dd19d522f16e8789bea5_lbpiwr.png"); 
+        /*box-shadow: 5px 5px 150px 0px black;
+*/
+    }
+    
+    50%{
+        transform: rotate(360deg) scale(1.25);
+        background-image: url("https://res.cloudinary.com/sam-el/image/upload/v1616803119/b5iagr2hi29qu2jkmh09a4rkln-f8d58d3af196dd19d522f16e8789bea5_lbpiwr.png"); 
+        /*box-shadow: 5px 5px 100px 50px black;
+*/
+    }
+    
+    100%{
+        transform: rotate(0deg) scale(1);
+        background-image: url("https://res.cloudinary.com/sam-el/image/upload/v1616803119/b5iagr2hi29qu2jkmh09a4rkln-f8d58d3af196dd19d522f16e8789bea5_lbpiwr.png"); 
+        /*box-shadow: 5px 5px 150px 0px black;
+*/
+    }
+}

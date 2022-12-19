@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <title>Quote Anime</title>
+        <link rel="stylesheet" href="game.css">
+        <script src="https://kit.fontawesome.com/2e740b69d6.js" crossorigin="anonymous"></script>
+    </head>
+    <body>
+        <div id="loader"></div>
+        <div class="container hidden" id="test">
+
+            <div id="game" class="justify-center flex-column">
+
+                <div id="hud">
+                    <div id="hud-item">
+                        <p class="hud-prefix">Question</p>
+                        <h1 class="hud-main-text"  id="questionCounter"></h1>
+                    </div>
+                    <div id="hud-item">
+                        <p class="hud-prefix">Score</p>
+                        <h1 class="hud-main-text"  id="score">
+                            0
+                        </h1>
+                    </div>   
+                </div>
+                <div class="quote-area">
+                    <i class="fa-solid fa-quote-left"></i>
+                    <h2 id="question"></h2>
+                    <i class="fa-solid fa-quote-right"></i>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-text" data-number="1"></p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-text" data-number="2"></p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-text" data-number="3"></p>
+                </div>
+                <div class="choice-container">
+                    <p class="choice-text" data-number="4"></p>
+                </div>
+            </div>
+        </div>
+        <script src="game.js"></script>
+    </body>
+</html>
