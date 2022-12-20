@@ -1,5 +1,8 @@
-const highScoresList = document.getElementById("highScoreList")
-const highScores = JSON.parse(localStorage.getItem("highScores")) || []
+const highScoresList = document.getElementById("highScoreList");
+const highScores = JSON.parse(localStorage.getItem("highScores")) || [];
+
+
+
 
 
 // comme si on rajoutait des lignes de codes html
@@ -8,3 +11,11 @@ highScores.map(score => {
     return `<li class="high-score">${score.name} - ${score.score}</li>`
 })
 .join("")
+
+
+reset = e =>{
+    e.preventDefault(); 
+    localStorage.removeItem("highScores");
+    window.location.assign("/home.html")
+}
+reset

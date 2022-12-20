@@ -24,9 +24,16 @@ fetch("https://animechan.vercel.app/api/quotes")
 .then(loadedQuestions =>{
     questions=loadedQuestions.map(loadedQuestion =>{
 
-        const incorrect_answer=["Bleach","Shigatsu Wa Kimi No Uso","Naruto",
-        "One Piece","Hanasaku Iroha","Shingetsutan Tsukihime",
-        "Sakurasou no Pet na Kanojo","Fullmetal Alchemist","Death Note"]
+        const incorrect_answer=["Bleach","Shigatsu Wa Kimi No Uso","Naruto","One Piece","Hanasaku Iroha",
+            "Shingetsutan Tsukihime","Sakurasou no Pet na Kanojo","Fullmetal Alchemist","Death Note","CLANNAD",
+            "Kyoukai No Kanata","Claymore","Rokka no Yuusha","Yu Yu Hakusho","Re:Zero kara Hajimeru Isekai Seikatsu",
+            "One Punch Man","Wolf's Rain","Toriko","Samurai X: Trust & Betrayal","Nisekoi","Gintama","Psycho-Pass","Hellsing",
+            "Assassination Classroom 2nd Season","Accel World","Jinrui wa Suitai Shimashita","Shingeki no Kyojin",
+            "Kenichi: The Mightiest Disciple","Jormungand","Baka to Test to Shoukanjuu","Nisemonogatari","Ga-Rei:Zero","Bleach",
+            "Durarara!!","Fairy Tail","SERVAMP",
+            "Yahari Ore No Seishun Love Come Wa Machigatteiru","Angel Beats!","Soul Eater"]
+
+
         //on récupère les citations
         const formattedQuestion = {
             question: loadedQuestion.quote,
@@ -77,8 +84,7 @@ startGame=()=>{
     questionCounter=0;
     score=0;
     availableQuestions=[... questions];
-    localStorage.setItem("recap",JSON.stringify(recap))
-    console.log(recap);
+    localStorage.setItem("recap",JSON.stringify(recap));
     getNewQuestion();
     
     //on ajoute les questions quand elles sont bien chargés
@@ -121,7 +127,8 @@ choices.forEach(choice => {
         if(!acceptingAnswers) return;
         acceptingAnswers=false;
         const selectedChoice = e.target;
-        // on obtient le nombre de la réponse sélectionner
+
+        // on obtient le nombre de la réponse sélectionnée
         const selectedAnswer =selectedChoice.dataset["number"];
     
         //on regarde si la réponse choisi est bonne
