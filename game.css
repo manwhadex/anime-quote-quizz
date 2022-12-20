@@ -14,9 +14,10 @@ p{
     display: block;
     max-width: 20rem;
     border-radius: 12px;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 5rem;
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
     padding: 2rem;
     background-color:rgba(0, 0, 0, 0.5);
     color: beige;
