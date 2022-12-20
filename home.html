@@ -9,9 +9,14 @@
     <body>
         <div class="container">
             <div id="home" class="flex-column flex center">
-                <h1>Anime Quote Quizz</h1>
-                <a href="/game.html" class="btn">Play</a>
-                <a href="/highscore.html" id="highscore-btn" class="btn">High scores<i class="fa-solid fa-crown"></i></a>
+                <h1>Quote Quizz</h1>
+                <select name="game-mode" id="game-mode">
+                    <option value="anime">Anime Quote Quizz</option>
+                    <option value="naruto">Naruto Quote Quizz</option>
+                </select>
+                <button class="btn" onclick="game_start(event)">Play</a>
+                <button id="highscore-btn" class="btn" onclick="highscore()">High scores<i class="fa-solid fa-crown"></i></a>
             </div> 
         </div>
+        <script src="home.js"></script>
     </body>

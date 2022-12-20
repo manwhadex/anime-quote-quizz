@@ -13,18 +13,30 @@ let score=0;
 let questionCounter=0;
 let availableQuestions=[];
 
+const mode=localStorage.getItem("game-mode")
+
+
+let url="https://animechan.vercel.app/api/quotes"
+
+if(mode=="naruto"){
+     url = "https://animechan.vercel.app/api/quotes/anime?title=naruto"
+}
+
 
 
 let recap=[];
 let questions =[];
 
 
-fetch("https://animechan.vercel.app/api/quotes")
+let r=[]
+
+
+fetch(url)
 .then(res=>{return res.json()})
 .then(loadedQuestions =>{
     questions=loadedQuestions.map(loadedQuestion =>{
 
-        const incorrect_answer=["Bleach","Shigatsu Wa Kimi No Uso","Naruto","One Piece","Hanasaku Iroha",
+        let incorrect_answer=["Bleach","Shigatsu Wa Kimi No Uso","Naruto","One Piece","Hanasaku Iroha",
             "Shingetsutan Tsukihime","Sakurasou no Pet na Kanojo","Fullmetal Alchemist","Death Note","CLANNAD",
             "Kyoukai No Kanata","Claymore","Rokka no Yuusha","Yu Yu Hakusho","Re:Zero kara Hajimeru Isekai Seikatsu",
             "One Punch Man","Wolf's Rain","Toriko","Samurai X: Trust & Betrayal","Nisekoi","Gintama","Psycho-Pass","Hellsing",
@@ -32,6 +44,20 @@ fetch("https://animechan.vercel.app/api/quotes")
             "Kenichi: The Mightiest Disciple","Jormungand","Baka to Test to Shoukanjuu","Nisemonogatari","Ga-Rei:Zero","Bleach",
             "Durarara!!","Fairy Tail","SERVAMP",
             "Yahari Ore No Seishun Love Come Wa Machigatteiru","Angel Beats!","Soul Eater"]
+
+        let incorrect_answer_naruto=['Pain', 'Yashamaru', 'Sasuke Uchiha', 'Obito Uchiha', 'Shino Aburame',
+         'Itachi Uchiha', 'Madara Uchiha']
+
+
+        let good_answer=loadedQuestion.anime
+
+        if(mode=='naruto'){
+            incorrect_answer=incorrect_answer_naruto ;
+            good_answer=loadedQuestion.character
+        }
+
+        r.push(`${good_answer}`)
+        console.log(r)
 
 
         //on récupère les citations
@@ -51,14 +77,14 @@ fetch("https://animechan.vercel.app/api/quotes")
 
         while(answerChoices.length<3){
         const answerIndex = Math.floor(Math.random()*incorrect_answer.length)
-            if(loadedQuestion.anime!=incorrect_answer[answerIndex]){
+            if(good_answer!=incorrect_answer[answerIndex]){
                 answerChoices.push(incorrect_answer[answerIndex]);
                 incorrect_answer.splice(answerIndex,1);
             };
         };
         //on met la bonne réponse dans la liste au bon endroit choisi au hasard
         formattedQuestion.answer = Math.floor(Math.random()*3) + 1;
-        answerChoices.splice(formattedQuestion.answer - 1,0,loadedQuestion.anime);
+        answerChoices.splice(formattedQuestion.answer - 1,0,good_answer);
 
         answerChoices.forEach((choice,index)=>{
             formattedQuestion["choice"+(index+1)]=choice;
