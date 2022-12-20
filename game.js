@@ -88,8 +88,8 @@ startGame=()=>{
     getNewQuestion();
     
     //on ajoute les questions quand elles sont bien chargés
-    //game.classList.remove('hidden');
-    //loader.classList.add('hidden');
+    game.classList.remove('hidden');
+    loader.classList.add('hidden');
 
 };
 
