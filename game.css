@@ -116,8 +116,10 @@ p{
 #loader{
     width: 100px;
     height: 100px;
-    margin: 5rem auto;
-    margin-top: 17rem;
+    position: absolute;
+    transform: translate(-45%, -45%);
+    top: 45%;
+    left: 45%;
     /*border: 2px solid black;*/
     border-radius: 50%;
     background-color: darkred;
